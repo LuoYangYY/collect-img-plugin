@@ -1,5 +1,5 @@
 $(function () {
-
+    console.log('调试popup.js')
     // 一键收集全部图片
     $('#collectAll').click(e => {
         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {

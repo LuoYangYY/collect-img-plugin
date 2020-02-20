@@ -1,4 +1,4 @@
-console.log('页面插入content-script')
+console.log('页面插入content-script成功')
 
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
     if(message.type === 'REQUEST_PREVIEW_ALL_IMG'){
@@ -13,7 +13,7 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
 
 function PreviewAllImg(){
     GetAllAttrList('img', ['src', 'data-src']).then((res) => {
-        ShowImgPanel(res); 
+        ShowImgPanel(res);
     })
 }
 
@@ -24,7 +24,7 @@ function ShowCollectBtn(){
         $($(item).parent()).css('position', 'relative');
         $($(item).parent()).find('.collect_img_btn').remove();
         $($(item).parent()).append('<div class="collect_img_btn" data-src="'+src+'">收藏</div>');
-        
+
     });
     $('.collect_img_btn').click((e) => {
         e.stopPropagation();
